@@ -13,6 +13,8 @@ namespace ForumEtec.Models
         [StringLength(400)]
         public string DescricaoPergunta { get; set; }
 
+        public string TituloPergunta { get; set; }
+
         public virtual Aluno Aluno { get; set; }
 
         public List<Resposta> Respostas { get; set; }

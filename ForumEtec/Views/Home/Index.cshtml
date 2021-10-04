@@ -4,37 +4,37 @@
 
 @model IEnumerable<ForumEtec.Models.Pergunta>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.DescricaoPergunta)
-            </th>
-            <th>@Html.DisplayNameFor(model => model.PerguntaId)</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="row">
+    <div class="col-sm-3">
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active">
+                Cras justo odio
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+            <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+            <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+            <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+        </div>
+    </div>
+    <div class="col-sm-9">
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DescricaoPergunta)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PerguntaId)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.PerguntaId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.PerguntaId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.PerguntaId">Delete</a>
-                </td>
-            </tr>
+            <div class="card text-left mb-3">
+                <div class="card-header">
+                    <h4>@Html.DisplayFor(modelItem => item.Aluno.NomeAluno)</h4>
+                    <h5 class="text-secondary">@Html.DisplayFor(modelItem => item.Aluno.Curso.NomeCurso)</h5>
+                    
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.TituloPergunta)</h5>
+                    <p class="card-text">@Html.DisplayFor(modelItem => item.DescricaoPergunta)</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                <div class="card-footer text-muted">
+                    2 days ago
+                </div>
+            </div>
+
         }
-    </tbody>
-</table>
+    </div>
+    </div>
