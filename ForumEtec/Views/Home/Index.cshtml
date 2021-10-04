@@ -2,7 +2,39 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model IEnumerable<ForumEtec.Models.Pergunta>
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DescricaoPergunta)
+            </th>
+            <th>@Html.DisplayNameFor(model => model.PerguntaId)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescricaoPergunta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PerguntaId)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PerguntaId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.PerguntaId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PerguntaId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

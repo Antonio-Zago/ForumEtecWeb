@@ -17,6 +17,6 @@ namespace ForumEtec.Repositories
             _contexto = contexto;
         }
 
-        public IEnumerable<Pergunta> Perguntas => _contexto.Perguntas.ToList();
+        public IEnumerable<Pergunta> Perguntas => _contexto.Perguntas;
     }
 }

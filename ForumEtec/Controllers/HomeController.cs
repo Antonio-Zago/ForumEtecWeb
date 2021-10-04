@@ -1,4 +1,5 @@
 ﻿using ForumEtec.Models;
+using ForumEtec.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -13,14 +14,20 @@ namespace ForumEtec.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+
+        private readonly IPerguntaRepository _perguntaRepository;
+
+        public HomeController(ILogger<HomeController> logger, IPerguntaRepository perguntaRepository)
         {
+            _perguntaRepository = perguntaRepository;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var perguntas = _perguntaRepository.Perguntas;
+
+            return View(perguntas);
         }
 
         public IActionResult Privacy()
