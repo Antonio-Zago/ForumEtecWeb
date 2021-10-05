@@ -22,14 +22,14 @@
         {
             var id = "Resposta" + item.PerguntaId;
 
-        <div class="card text-left mb-3">
-            <div class="card-header">
-                <h4>@Html.DisplayFor(modelItem => item.Aluno.NomeAluno)</h4>
-                <h5 class="text-secondary">@Html.DisplayFor(modelItem => item.Aluno.CursoAluno)</h5>
+        <div class="card text-left mb-3 border-dark ">
+            <div class="card-header bg-danger">
+                <h4 class="text-white">@Html.DisplayFor(modelItem => item.Aluno.NomeAluno)</h4>
+                <h5 class="text-dark">@Html.DisplayFor(modelItem => item.Aluno.CursoAluno)</h5>
 
             </div>
             <div class="card-body">
-                <h5 class="card-title">@Html.DisplayFor(modelItem => item.TituloPergunta)</h5>
+                <h6 class="card-title">@Html.DisplayFor(modelItem => item.TituloPergunta)</h6>
                 <p class="card-text">@Html.DisplayFor(modelItem => item.DescricaoPergunta)</p>
 
 
@@ -43,9 +43,9 @@
                         @foreach (var resposta in item.Respostas)
                         {
                         <div class="card mt-3">
-                            <div class="card-header">
-                                <h5>@Html.DisplayFor(modelItem => resposta.Aluno.NomeAluno)</h5>
-                                <h6 class="text-secondary">@Html.DisplayFor(modelItem => resposta.Aluno.CursoAluno)</h6>
+                            <div class="card-header bg-success">
+                                <h5 class="text-white">@Html.DisplayFor(modelItem => resposta.Aluno.NomeAluno)</h5>
+                                <h6 class="text-dark">@Html.DisplayFor(modelItem => resposta.Aluno.CursoAluno)</h6>
                             </div>
                             <div class="card-body">
                                 <blockquote class="blockquote mb-0">
