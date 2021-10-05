@@ -9,5 +9,6 @@ namespace ForumEtec.Repositories
     public interface IPerguntaRepository
     {
         public IEnumerable<Pergunta> Perguntas { get; }
+
     }
 }

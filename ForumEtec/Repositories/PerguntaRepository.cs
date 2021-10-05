@@ -17,6 +17,7 @@ namespace ForumEtec.Repositories
             _contexto = contexto;
         }
 
-        public IEnumerable<Pergunta> Perguntas => _contexto.Perguntas.Include(c => c.Aluno.Curso);
+        public IEnumerable<Pergunta> Perguntas => _contexto.Perguntas.Include(c => c.Aluno.Respostas);
+
     }
 }

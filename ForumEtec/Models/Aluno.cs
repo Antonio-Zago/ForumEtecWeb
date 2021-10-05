@@ -17,6 +17,8 @@ namespace ForumEtec.Models
 
         public int SemestreAluno { get; set; }
 
+        public string CursoAluno { get; set; }
+
         public virtual Curso Curso { get; set; }
 
         public List<Pergunta> Perguntas { get; set; }
