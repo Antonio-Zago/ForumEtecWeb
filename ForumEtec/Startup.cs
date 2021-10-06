@@ -29,7 +29,7 @@ namespace ForumEtec
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddTransient<IPerguntaRepository, PerguntaRepository>();
-
+            
             services.AddControllersWithViews();
         }
 

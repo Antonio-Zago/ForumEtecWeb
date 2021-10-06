@@ -19,5 +19,9 @@ namespace ForumEtec.Repositories
 
         public IEnumerable<Pergunta> Perguntas => _contexto.Perguntas.Include(c => c.Aluno.Respostas);
 
+        public IEnumerable<Pergunta> PerguntasPesquisa(string pergunta)
+        {
+            return _contexto.Perguntas.Where(c => EF.Functions.Like(c.DescricaoPergunta, "%" + pergunta + "%"));
+        }
     }
 }

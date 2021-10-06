@@ -10,5 +10,9 @@ namespace ForumEtec.Repositories
     {
         public IEnumerable<Pergunta> Perguntas { get; }
 
+
+
+        public IEnumerable<Pergunta> PerguntasPesquisa(string pergunta);
+
     }
 }
